@@ -2,7 +2,7 @@
   --bg: #ffffff;
   --text: #111217;
   --muted: #6b7280;
-  --accent: #0ea5e9;         /* blue accent */
+  --accent: #0ea5e9;      
   --accent-contrast: #ffffff;
   --card-bg: #ffffff;
   --sidebar-bg: #f3f4f6;
@@ -32,8 +32,14 @@
 }
 
 /* ---------- Global resets & typography ---------- */
-* { box-sizing: border-box; }
-html,body { height:100%; }
+* { 
+  box-sizing: border-box; 
+}
+
+html,body { 
+  height:100%; 
+}
+
 body {
   margin:0;
   font-family: "Arial", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", sans-serif;
@@ -45,7 +51,6 @@ body {
   font-size:16px;
 }
 
-/* Utility containers */
 .container {
   width: 92%;
   max-width: 1100px;
@@ -61,7 +66,6 @@ body {
   white-space:nowrap;
 }
 
-/* ---------- Header / Nav (Flexbox used) ---------- */
 .site-header {
   border-bottom: 1px solid rgba(0,0,0,0.06);
   background: transparent;
@@ -70,7 +74,6 @@ body {
   z-index: 30;
 }
 
-/* header-inner uses flexbox to arrange logo, nav, actions */
 .header-inner {
   display:flex;
   align-items:center;
@@ -88,16 +91,16 @@ body {
   font-weight:700;
   font-size:1.05rem;
 }
+
 .logo svg { color: var(--accent); }
 .brand { display:inline-block; }
 
-/* Nav links aligned using flex; space-between achieved with margin auto on nav */
 .nav {
   margin-left: 1rem;
   margin-right: auto;
 }
 .nav-list {
-  display:flex;                /* Flexbox: horizontal nav */
+  display:flex;              
   gap: 1.25rem;
   list-style:none;
   padding:0;
@@ -147,7 +150,10 @@ body {
   border: 1px solid rgba(0,0,0,0.06);
   color: var(--text);
 }
-.btn.large { padding:0.8rem 1.2rem; font-size:1rem; }
+.btn.large { 
+  padding:0.8rem 1.2rem; 
+  font-size:1rem; 
+}
 
 /* Focus styles (Accessibility) */
 a:focus, button:focus {
@@ -155,29 +161,22 @@ a:focus, button:focus {
   outline-offset: 2px;
 }
 
-/* Hamburger (mobile) - hidden on desktop */
+
 .hamburger {
   display:none;
   background: transparent;
   border: none;
   padding: 0.4rem;
-}
-.hamburger-bar {
-  width:20px;
-  height:2px;
-  background:var(--muted);
-  display:block;
-  margin:4px 0;
-  border-radius:2px;
+  cursor: pointer;
 }
 
-/* ---------- HERO (Flexbox 2-col) ---------- */
+/* ---------- HERO SECTION ---------- */
 .hero {
   padding: 3.2rem 0;
 }
 .hero-inner {
-  display:flex;                /* Flexbox: hero two columns */
-  align-items:center;          /* vertical center */
+  display:flex;              
+  align-items:center;          
   gap: 2.5rem;
   flex-wrap:wrap;
 }
@@ -200,7 +199,12 @@ a:focus, button:focus {
 }
 
 /* hero CTAs */
-.hero-ctas { display:flex; gap:0.8rem; align-items:center; margin-bottom:1.2rem; }
+.hero-ctas { 
+  display:flex; 
+  gap:0.8rem; 
+  align-items:center; 
+  margin-bottom:1.2rem; 
+}
 
 /* trusted logos */
 .trusted {
@@ -222,7 +226,7 @@ a:focus, button:focus {
   box-shadow: 0 8px 30px rgba(2,6,23,0.06);
 }
 
-/* ---------- FEATURES (Flexbox used for row of cards) ---------- */
+/* ---------- FEATURES SECTION ---------- */
 .features {
   padding: 2.8rem 0;
   background: transparent;
@@ -233,13 +237,12 @@ a:focus, button:focus {
   color:var(--text);
 }
 
-/* features-row: equal-height cards using flex */
 .features-row {
-  display:flex;               /* Flexbox: cards across row */
+  display:flex;               
   gap: 1rem;
-  align-items: stretch;      /* ensure equal heights */
+  align-items: stretch;   
   margin-top:1rem;
-  flex-wrap:wrap;            /* wrap on small screens */
+  flex-wrap:wrap;           
 }
 .feature {
   flex: 1 1 220px;
@@ -266,7 +269,7 @@ a:focus, button:focus {
   background: linear-gradient(90deg, rgba(14,165,233,0.06), rgba(110,231,183,0.03));
 }
 .cta-inner {
-  display:flex;              /* Flexbox for CTA layout */
+  display:flex;             
   gap:1rem;
   align-items:center;
   justify-content:space-between;
@@ -285,9 +288,15 @@ a:focus, button:focus {
   gap:1rem;
   flex-wrap:wrap;
 }
-.footer-links { display:flex; gap:0.8rem; list-style:none; padding:0; margin:0; }
+.footer-links { 
+  display:flex; 
+  gap:0.8rem; 
+  list-style:none; 
+  padding:0; 
+  margin:0; 
+}
 
-/* ---------- Responsive breakpoints ---------- */
+/* ---------- Responsiveness ---------- */
 /* Tablet */
 @media (min-width: 720px) {
   .nav-list { gap: 1.6rem; }
@@ -311,7 +320,3 @@ a:focus, button:focus {
   .cta-inner { flex-direction:column; align-items:flex-start; }
   .brand { display:none; } /* keep logo compact on very small screens */
 }
-
-/* ---------- Small accessibility improvements ---------- */
-/* Make interactive elements visibly focusable */
-a.btn:focus { box-shadow: 0 0 0 6px var(--outline); }

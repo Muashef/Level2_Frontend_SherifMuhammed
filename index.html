@@ -3,8 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>FocusFlow â€” Smart Team Workspace</title>
-  <meta name="description" content="FocusFlow â€” a fictional modern team workspace. Flexbox layout, responsive, accessible, CSS-only theme toggle." />
+  <title>FocusFlow Smart Team Workspace</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -18,11 +17,10 @@
 
   <div class="site" aria-live="polite">
     <!-- Header / Navigation -->
-    <header class="site-header" role="banner" aria-label="Top navigation">
+    <header class="site-header" aria-label="Top navigation">
       <div class="container header-inner">
-        <!-- Logo (SVG) -->
+        <!-- Logo -->
         <a href="#" class="logo" aria-label="FocusFlow home">
-          <!-- simple 2-letter mark -->
           <svg width="36" height="36" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <rect x="1" y="1" width="22" height="22" rx="5" fill="currentColor"></rect>
             <text x="12" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="var(--logo-contrast)">FF</text>
@@ -30,13 +28,13 @@
           <span class="brand">FocusFlow</span>
         </a>
 
-        <!-- Nav (Flexbox for spacing) -->
-        <nav class="nav" role="navigation" aria-label="Primary">
+        <!-- Nav -->
+        <nav class="nav" role="navigation">
           <ul class="nav-list">
-            <li><a href="#product" class="nav-link">Product</a></li>
-            <li><a href="#features" class="nav-link">Features</a></li>
-            <li><a href="#pricing" class="nav-link">Pricing</a></li>
-            <li><a href="#resources" class="nav-link">Resources</a></li>
+            <li><a href="#" class="nav-link">Product</a></li>
+            <li><a href="#" class="nav-link">Features</a></li>
+            <li><a href="#" class="nav-link">Pricing</a></li>
+            <li><a href="#" class="nav-link">Resources</a></li>
           </ul>
         </nav>
 
@@ -44,8 +42,6 @@
         <div class="header-actions" role="group" aria-label="Header actions">
           <a class="btn text" href="#" aria-label="Request demo">Request a demo</a>
           <a class="btn primary" href="#" aria-label="Try FocusFlow free">Try FocusFlow free</a>
-
-          <!-- Visual theme control hint for sighted users -->
           <label for="theme-toggle" class="theme-visual" aria-hidden="true" title="Toggle theme">
             <!-- small sun/moon icon via SVG -->
             <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -54,24 +50,32 @@
             </svg>
           </label>
 
-          <!-- Mobile hamburger (no JS; purely layout-ready) -->
+          <!-- Mobile hamburger -->
           <button class="hamburger" aria-label="Open menu (mobile)" aria-expanded="false">
-            <span class="hamburger-bar"></span>
-            <span class="hamburger-bar"></span>
-            <span class="hamburger-bar"></span>
+            <svg
+              width="18"
+              height="16"
+              viewBox="0 0 18 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0H18V2H0V0ZM0 7H18V9H0V7ZM0 14H18V16H0V14Z"
+                fill="#2C1513"
+              />
+			      </svg>
           </button>
         </div>
       </div>
     </header>
 
     <!-- Main content -->
-    <main role="main">
-      <!-- HERO: Flexbox two-column, vertically centered -->
-      <section id="hero" class="hero" role="region" aria-label="Hero">
+    <main>
+      <section id="hero" class="hero" aria-label="Hero">
         <div class="container hero-inner">
           <div class="hero-left">
             <h1 class="hero-title">The workspace that keeps your team focused.</h1>
-            <p class="hero-copy">FocusFlow combines notes, tasks, and lightweight automation so teams move faster. Built for clarity â€” not clutter.</p>
+            <p class="hero-copy">FocusFlow combines notes, tasks, and lightweight automation so teams move faster. Built for clarity not clutter.</p>
 
             <div class="hero-ctas" role="group" aria-label="Primary call to actions">
               <a href="#" class="btn primary large" aria-label="Start free trial">Start free trial</a>
@@ -87,7 +91,7 @@
           </div>
 
           <div class="hero-right" aria-hidden="false">
-            <!-- Illustration as inline SVG (simple workspace mockup) -->
+            <!-- simple workspace mockup -->
             <svg class="hero-illustration" viewBox="0 0 600 400" role="img" aria-label="App preview" focusable="false">
               <rect x="12" y="12" width="576" height="376" rx="8" fill="var(--card-bg)" stroke="rgba(0,0,0,0.06)"></rect>
 
@@ -108,12 +112,10 @@
         </div>
       </section>
 
-      <!-- FEATURES: 3 cards in a row (desktop), stacked on mobile -->
-      <section id="features" class="features" role="region" aria-label="Features">
+      <!-- FEATURES SECTION -->
+      <section id="features" class="features" aria-label="Features">
         <div class="container">
           <h2 class="section-title">Everything your team needs</h2>
-
-          <!-- Flexbox container for feature cards -->
           <div class="features-row">
             <article class="feature" aria-labelledby="f1">
               <svg class="feature-icon" width="44" height="44" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
@@ -136,8 +138,7 @@
         </div>
       </section>
 
-      <!-- FINAL CTA -->
-      <section id="final-cta" class="final-cta" role="region" aria-label="Final call to action">
+      <section id="final-cta" class="final-cta">
         <div class="container cta-inner">
           <div>
             <h2>Ready to give your team focus?</h2>
@@ -151,9 +152,9 @@
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer" role="contentinfo" aria-label="Footer">
+    <footer class="site-footer" role="contentinfO" aria-label="Footer">
       <div class="container footer-inner">
-        <small>&copy; 2025 FocusFlow â€” All rights reserved.</small>
+        <small>&copy; 2025 FocusFlow All rights reserved.</small>
         <nav aria-label="Footer links">
           <ul class="footer-links">
             <li><a href="#">Privacy</a></li>
@@ -168,10 +169,5 @@
       </div>
     </footer>
   </div>
-
-  <!--
-    No JavaScript required for theme toggle. Everything uses CSS,
-    but you can still add JS later for extra behaviors (menu toggle).
-  -->
 </body>
 </html>
