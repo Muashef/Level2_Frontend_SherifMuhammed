@@ -1,0 +1,317 @@
+.site {
+  --bg: #ffffff;
+  --text: #111217;
+  --muted: #6b7280;
+  --accent: #0ea5e9;         /* blue accent */
+  --accent-contrast: #ffffff;
+  --card-bg: #ffffff;
+  --sidebar-bg: #f3f4f6;
+  --logo-contrast: #fff;
+  --btn-text: #fff;
+  --btn-bg: #0ea5e9;
+  --outline: rgba(14,165,233,0.12);
+  --focus: #2563eb;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+/* If the checkbox theme-toggle is checked, override variables for dark theme */
+.theme-toggle:checked ~ .site {
+  --bg: #0b1220;
+  --text: #e6eef8;
+  --muted: #9aa6b2;
+  --accent: #6ee7b7;
+  --accent-contrast: #07211a;
+  --card-bg: #081322;
+  --sidebar-bg: #07121a;
+  --logo-contrast: #000;
+  --btn-text: #07211a;
+  --btn-bg: #6ee7b7;
+  --outline: rgba(110,231,183,0.12);
+  --focus: #60a5fa;
+}
+
+/* ---------- Global resets & typography ---------- */
+* { box-sizing: border-box; }
+html,body { height:100%; }
+body {
+  margin:0;
+  font-family: "Arial", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  background: var(--bg);
+  color: var(--text);
+  line-height:1.45;
+  font-size:16px;
+}
+
+/* Utility containers */
+.container {
+  width: 92%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Screen-reader only helper */
+.sr-only {
+  position:absolute!important;
+  height:1px;width:1px;
+  overflow:hidden;
+  clip:rect(1px,1px,1px,1px);
+  white-space:nowrap;
+}
+
+/* ---------- Header / Nav (Flexbox used) ---------- */
+.site-header {
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  background: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+}
+
+/* header-inner uses flexbox to arrange logo, nav, actions */
+.header-inner {
+  display:flex;
+  align-items:center;
+  gap: 1rem;
+  padding: 0.9rem 0;
+}
+
+/* Logo */
+.logo {
+  display:flex;
+  align-items:center;
+  gap: 0.6rem;
+  color: var(--text);
+  text-decoration: none;
+  font-weight:700;
+  font-size:1.05rem;
+}
+.logo svg { color: var(--accent); }
+.brand { display:inline-block; }
+
+/* Nav links aligned using flex; space-between achieved with margin auto on nav */
+.nav {
+  margin-left: 1rem;
+  margin-right: auto;
+}
+.nav-list {
+  display:flex;                /* Flexbox: horizontal nav */
+  gap: 1.25rem;
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+.nav-link {
+  color: var(--muted);
+  text-decoration:none;
+  font-weight:500;
+  padding:6px 8px;
+  border-radius:6px;
+}
+.nav-link:hover, .nav-link:focus {
+  color: var(--text);
+  outline: none;
+  box-shadow: 0 0 0 4px var(--outline);
+}
+
+/* Header actions */
+.header-actions {
+  display:flex;
+  gap:0.6rem;
+  align-items:center;
+}
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:0.45rem 0.9rem;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  cursor:pointer;
+  border: none;
+}
+.btn.text {
+  background: transparent;
+  color: var(--muted);
+}
+.btn.primary {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  box-shadow: 0 6px 18px rgba(14,165,233,0.12);
+}
+.btn.outline {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.06);
+  color: var(--text);
+}
+.btn.large { padding:0.8rem 1.2rem; font-size:1rem; }
+
+/* Focus styles (Accessibility) */
+a:focus, button:focus {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Hamburger (mobile) - hidden on desktop */
+.hamburger {
+  display:none;
+  background: transparent;
+  border: none;
+  padding: 0.4rem;
+}
+.hamburger-bar {
+  width:20px;
+  height:2px;
+  background:var(--muted);
+  display:block;
+  margin:4px 0;
+  border-radius:2px;
+}
+
+/* ---------- HERO (Flexbox 2-col) ---------- */
+.hero {
+  padding: 3.2rem 0;
+}
+.hero-inner {
+  display:flex;                /* Flexbox: hero two columns */
+  align-items:center;          /* vertical center */
+  gap: 2.5rem;
+  flex-wrap:wrap;
+}
+.hero-left {
+  flex: 1 1 380px;
+}
+.hero-right {
+  flex: 0 1 420px;
+  display:flex;
+  justify-content:center;
+}
+.hero-title {
+  font-size: clamp(1.6rem, 3.6vw, 2.6rem);
+  margin: 0 0 0.8rem;
+  line-height:1.05;
+}
+.hero-copy {
+  color: var(--muted);
+  margin-bottom:1.2rem;
+}
+
+/* hero CTAs */
+.hero-ctas { display:flex; gap:0.8rem; align-items:center; margin-bottom:1.2rem; }
+
+/* trusted logos */
+.trusted {
+  display:flex;
+  gap:1rem;
+  align-items:center;
+  list-style:none;
+  padding:0;
+  margin:0.6rem 0 0;    
+  color:var(--muted);
+}
+
+/* hero illustration sizing */
+.hero-illustration {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.06);
+}
+
+/* ---------- FEATURES (Flexbox used for row of cards) ---------- */
+.features {
+  padding: 2.8rem 0;
+  background: transparent;
+}
+.section-title {
+  font-size:1.2rem;
+  margin-bottom:1rem;
+  color:var(--text);
+}
+
+/* features-row: equal-height cards using flex */
+.features-row {
+  display:flex;               /* Flexbox: cards across row */
+  gap: 1rem;
+  align-items: stretch;      /* ensure equal heights */
+  margin-top:1rem;
+  flex-wrap:wrap;            /* wrap on small screens */
+}
+.feature {
+  flex: 1 1 220px;
+  background: var(--card-bg);
+  padding: 1.25rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.06);
+  display:flex;
+  flex-direction:column;
+  gap: 0.8rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.feature:hover, .feature:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(2,6,23,0.06);
+}
+.feature-icon { color: var(--accent); }
+
+/* ---------- FINAL CTA ---------- */
+.final-cta {
+  padding: 2.2rem 0;
+  margin-top:1.4rem;
+  border-radius: 12px;
+  background: linear-gradient(90deg, rgba(14,165,233,0.06), rgba(110,231,183,0.03));
+}
+.cta-inner {
+  display:flex;              /* Flexbox for CTA layout */
+  gap:1rem;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+/* ---------- FOOTER ---------- */
+.site-footer {
+  padding: 1.6rem 0;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+.footer-inner {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+.footer-links { display:flex; gap:0.8rem; list-style:none; padding:0; margin:0; }
+
+/* ---------- Responsive breakpoints ---------- */
+/* Tablet */
+@media (min-width: 720px) {
+  .nav-list { gap: 1.6rem; }
+  .hamburger { display:none; }
+  .nav { display:block; }
+}
+
+/* Desktop - show full nav and hide hamburger */
+@media (min-width: 980px) {
+  .container { max-width: 1100px; }
+}
+
+/* Mobile: stack nav under logo and show hamburger visually */
+@media (max-width: 719px) {
+  .nav { display:none; }         /* nav hidden; hamburger can be used with JS later */
+  .hamburger { display:inline-flex; }
+  .header-inner { gap: 0.6rem; }
+  .hero-inner { flex-direction:column-reverse; align-items:flex-start; gap:1.2rem; }
+  .hero-right { width:100%; display:flex; justify-content:flex-start; }
+  .features-row { flex-direction:column; }
+  .cta-inner { flex-direction:column; align-items:flex-start; }
+  .brand { display:none; } /* keep logo compact on very small screens */
+}
+
+/* ---------- Small accessibility improvements ---------- */
+/* Make interactive elements visibly focusable */
+a.btn:focus { box-shadow: 0 0 0 6px var(--outline); }
