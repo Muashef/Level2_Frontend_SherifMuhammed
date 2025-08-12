@@ -12,7 +12,7 @@
   --outline: rgba(14,165,233,0.12);
   --focus: #2563eb;
   color: var(--text);
-  background-color: var(--bg);
+  background-color: var(--bg); 2932 4456 3929 8013 5776
 }
 
 /* If the checkbox theme-toggle is checked, override variables for dark theme */
@@ -68,10 +68,12 @@ body {
 
 .site-header {
   border-bottom: 1px solid rgba(0,0,0,0.06);
-  background: transparent;
-  position: sticky;
+  background: none;
+  position: fixed;
   top: 0;
-  z-index: 30;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .header-inner {
@@ -92,8 +94,12 @@ body {
   font-size:1.05rem;
 }
 
-.logo svg { color: var(--accent); }
-.brand { display:inline-block; }
+.logo svg { 
+  color: var(--accent); 
+}
+.brand { 
+  display:inline-block; 
+}
 
 .nav {
   margin-left: 1rem;
@@ -161,7 +167,6 @@ a:focus, button:focus {
   outline-offset: 2px;
 }
 
-
 .hamburger {
   display:none;
   background: transparent;
@@ -172,7 +177,7 @@ a:focus, button:focus {
 
 /* ---------- HERO SECTION ---------- */
 .hero {
-  padding: 3.2rem 0;
+  padding: 4rem 0;
 }
 .hero-inner {
   display:flex;              
@@ -290,6 +295,7 @@ a:focus, button:focus {
 }
 .footer-links { 
   display:flex; 
+  flex-wrap: wrap;
   gap:0.8rem; 
   list-style:none; 
   padding:0; 
