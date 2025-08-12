@@ -12,7 +12,7 @@
   --outline: rgba(14,165,233,0.12);
   --focus: #2563eb;
   color: var(--text);
-  background-color: var(--bg); 2932 4456 3929 8013 5776
+  background-color: var(--bg); 
 }
 
 /* If the checkbox theme-toggle is checked, override variables for dark theme */
@@ -233,7 +233,7 @@ a:focus, button:focus {
 
 /* ---------- FEATURES SECTION ---------- */
 .features {
-  padding: 2.8rem 0;
+  padding: 2rem 0;
   background: transparent;
 }
 .section-title {
@@ -317,12 +317,39 @@ a:focus, button:focus {
 
 /* Mobile: stack nav under logo and show hamburger visually */
 @media (max-width: 719px) {
-  .nav { display:none; }         /* nav hidden; hamburger can be used with JS later */
-  .hamburger { display:inline-flex; }
-  .header-inner { gap: 0.6rem; }
-  .hero-inner { flex-direction:column-reverse; align-items:flex-start; gap:1.2rem; }
-  .hero-right { width:100%; display:flex; justify-content:flex-start; }
-  .features-row { flex-direction:column; }
-  .cta-inner { flex-direction:column; align-items:flex-start; }
-  .brand { display:none; } /* keep logo compact on very small screens */
+  .nav { 
+    display:none; 
+  }        
+  .hamburger { 
+    display:inline-flex; 
+  }
+  .header-inner { 
+    gap: 0.6rem; 
+  }
+  .hero-inner { 
+    flex-direction:column-reverse; 
+    align-items:flex-start; 
+    gap:1.2rem; 
+  }
+  .hero-right { 
+    width:100%; 
+    display:flex; 
+    justify-content:flex-start; 
+  }
+  .features-row { 
+    flex-direction:column; 
+  }
+  .primary {
+    font-size: 9px;
+  }
+  .text {
+    font-size: 9px;
+  }
+  .cta-inner { 
+    flex-direction:column; 
+    align-items:flex-start; 
+  }
+  .brand { 
+    display:none; 
+  } 
 }
