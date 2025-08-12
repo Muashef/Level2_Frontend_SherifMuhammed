@@ -31,7 +31,7 @@
   --focus: #60a5fa;
 }
 
-/* ---------- Global resets & typography ---------- */
+/* ---------- Global resets ---------- */
 * { 
   box-sizing: border-box; 
 }
@@ -161,7 +161,7 @@ body {
   font-size:1rem; 
 }
 
-/* Focus styles (Accessibility) */
+/* Focus styles */
 a:focus, button:focus {
   outline: 3px solid var(--focus);
   outline-offset: 2px;
@@ -264,7 +264,9 @@ a:focus, button:focus {
   transform: translateY(-6px);
   box-shadow: 0 14px 30px rgba(2,6,23,0.06);
 }
-.feature-icon { color: var(--accent); }
+.feature-icon { 
+  color: var(--accent); 
+}
 
 /* ---------- FINAL CTA ---------- */
 .final-cta {
@@ -312,7 +314,9 @@ a:focus, button:focus {
 
 /* Desktop - show full nav and hide hamburger */
 @media (min-width: 980px) {
-  .container { max-width: 1100px; }
+  .container { 
+    max-width: 1100px; 
+  }
 }
 
 /* Mobile: stack nav under logo and show hamburger visually */
